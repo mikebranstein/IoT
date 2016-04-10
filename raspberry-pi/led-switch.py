@@ -14,10 +14,10 @@ GPIO.setup (switchPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 def loop():
     if GPIO.input(switchPin):
         GPIO.output(redLedPin, GPIO.LOW)
-        print('Button pressed.')
+        print('Button not pressed.')
     else:
         GPIO.output(redLedPin, GPIO.HIGH)
-        print('Button not pressed.')
+        print('Button pressed.')
     time.sleep(0.2)
     return
 
