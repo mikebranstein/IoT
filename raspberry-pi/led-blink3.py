@@ -17,8 +17,8 @@ def blinkThree(redLedPin, blueLedPin, greenLedPin):
 GPIO.setmode(GPIO.BOARD)
 
 redLedPin = 22
-blueLedPin = 14
-greenLedPin = 12
+blueLedPin = 18
+greenLedPin = 16
 
 # set data direction of LED pin to output
 GPIO.setup(redLedPin, GPIO.OUT)
