@@ -6,33 +6,47 @@ GPIO.setmode(GPIO.BOARD)
 
 redLedPin = 22
 switchPin = 18
-ledOn = False
-prevSwitchPressed = False
+toggler = new SwitchToggler(switchPin, redLedPin)
 
 # set data direction of LED pin to output
-GPIO.setup(redLedPin, GPIO.OUT)
-GPIO.setup (switchPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-
+# simple class that toggles the output value of the outputPin (HIGH/LOW)
+# by pressing the switch on switchInputPin
+#
+# to use, instantiate and call the toggle() method in your loop
+class SwitchToggler:
+    prevSwitchPressed = False
+    outputPinOn = False
+    def __init__(self, switchInputPin, outputPin):
+        self.switchInputPin = switchInputPin
+        self.outputPin = outputPin
+        GPIO.setup (switchInputPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(outputPin, GPIO.OUT)
+    
+    def toggle():
+        curSwitchPressed = not GPIO.input(self.switchInputPin)
+        
+        # do nothing if switch state has not changed    
+        if curSwitchPressed == prevSwitchPressed:
+            return
+            
+        self.prevSwitchPressed = curSwitchPressed
+        
+        if curSwitchPressed:
+            if self.outputPinOn:
+                GPIO.output(self.outputPin, GPIO.LOW)
+                self.outputPinOn = False
+            else:
+                GPIO.output(self.outputPin, GPIO.HIGH)
+                self.outputPinOn = True
+                
+        return
+       
+    
 
 def loop():
-    global prevSwitchPressed
-    global ledOn
-    curSwitchPressed = not GPIO.input(switchPin)
-
-    # do nothing if switch state has not changed    
-    if curSwitchPressed == prevSwitchPressed:
-        return
-        
-    prevSwitchPressed = curSwitchPressed
-    
-    if curSwitchPressed:
-        if ledOn:
-            GPIO.output(redLedPin, GPIO.LOW)
-            ledOn = False
-        else:
-            GPIO.output(redLedPin, GPIO.HIGH)
-            ledOn = True
+    global toggler
+    toggler.toggle()
     
     return
 
