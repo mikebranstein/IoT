@@ -13,9 +13,9 @@ GPIO.setup (switchPin, GPIO.IN)
 
 def loop():
     if GPIO.input(switchPin):
-        GPIO.output(redLedPin, GPIO.HIGH)
-    else:
         GPIO.output(redLedPin, GPIO.LOW)
+    else:
+        GPIO.output(redLedPin, GPIO.HIGH)
     return
 
 #loop until keyboard interrupt
