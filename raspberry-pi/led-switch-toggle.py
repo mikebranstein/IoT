@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import lib.switchtoggle
+import lib.switchtoggle as Toggle
 import time
 
 # tell GPIO to use the Pi's board numbering for pins
@@ -7,7 +7,7 @@ GPIO.setmode(GPIO.BOARD)
 
 redLedPin = 22
 switchPin = 18
-toggler = SwitchToggler(switchPin, redLedPin)
+toggler = Toggle.SwitchToggler(switchPin, redLedPin)
 
 def loop():
     global toggler
