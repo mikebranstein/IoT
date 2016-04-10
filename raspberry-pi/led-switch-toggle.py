@@ -16,6 +16,8 @@ GPIO.setup (switchPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 def loop():
+    global prevSwitchPressed
+    global ledOn
     curSwitchPressed = GPIO.input(switchPin)
 
     # do nothing if switch state has not changed    
