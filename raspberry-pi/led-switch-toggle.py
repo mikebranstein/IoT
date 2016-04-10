@@ -4,12 +4,6 @@ import time
 # tell GPIO to use the Pi's board numbering for pins
 GPIO.setmode(GPIO.BOARD)
 
-redLedPin = 22
-switchPin = 18
-toggler = new SwitchToggler(switchPin, redLedPin)
-
-# set data direction of LED pin to output
-
 # simple class that toggles the output value of the outputPin (HIGH/LOW)
 # by pressing the switch on switchInputPin
 #
@@ -41,6 +35,14 @@ class SwitchToggler:
                 self.outputPinOn = True
                 
         return
+
+
+redLedPin = 22
+switchPin = 18
+toggler = new SwitchToggler(switchPin, redLedPin)
+
+# set data direction of LED pin to output
+
        
     
 
