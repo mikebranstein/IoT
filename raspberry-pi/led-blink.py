@@ -16,6 +16,12 @@ redLedPin = 22
 # set data direction of LED pin to output
 GPIO.setup(redLedPin, GPIO.OUT)
 
-blink(redLedPin)
+# loop until keyboard interrupt
+
+try:
+    while True:
+        blink(redLedPin)
+except KeyboardInterrupt:
+    pass
 
 GPIO.cleanup()
