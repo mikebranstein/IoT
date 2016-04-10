@@ -17,7 +17,7 @@ class SwitchToggler:
         GPIO.setup (switchInputPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(outputPin, GPIO.OUT)
     
-    def toggle():
+    def toggle(self):
         curSwitchPressed = not GPIO.input(self.switchInputPin)
         
         # do nothing if switch state has not changed    
