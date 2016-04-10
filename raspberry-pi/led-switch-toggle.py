@@ -21,7 +21,7 @@ class SwitchToggler:
         curSwitchPressed = not GPIO.input(self.switchInputPin)
         
         # do nothing if switch state has not changed    
-        if curSwitchPressed == prevSwitchPressed:
+        if curSwitchPressed == self.prevSwitchPressed:
             return
             
         self.prevSwitchPressed = curSwitchPressed
