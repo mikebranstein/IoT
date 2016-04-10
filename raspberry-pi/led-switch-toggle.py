@@ -39,7 +39,7 @@ class SwitchToggler:
 
 redLedPin = 22
 switchPin = 18
-toggler = new SwitchToggler(switchPin, redLedPin)
+toggler = SwitchToggler(switchPin, redLedPin)
 
 # set data direction of LED pin to output
 
