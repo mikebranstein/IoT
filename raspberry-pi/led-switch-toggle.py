@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import lib.switch-toggle
+import lib.switchtoggle
 import time
 
 # tell GPIO to use the Pi's board numbering for pins
