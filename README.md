@@ -23,3 +23,8 @@ wire your Raspberry Pi according to the Fritzing diagram first ;-)
     > cd IoT
     > cd raspberry-pi
     > python3 led-blink.py
+    
+### Prerequisites
+
+All of my code samples for Raspberry Pi use [RPi.GPIO for Python](https://sourceforge.net/p/raspberry-gpio-python).
+Be sure you install it and it's prerequisites. For more info, visit its website above.
