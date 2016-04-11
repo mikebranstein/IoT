@@ -23,7 +23,7 @@ def RCtime (RCpin):
  
 def loop():
         print RCtime(12)     # Read RC timing using pin #12
-
+        return
 
 #loop until keyboard interrupt
 try:
