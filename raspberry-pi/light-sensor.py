@@ -22,7 +22,8 @@ def RCtime(RCpin):
 #loop until keyboard interrupt
 try:
     while True:
-        print RCtime(12)     # Read RC timing using pin #12
+        # Read RC timing using pin #12
+        print RCtime(12)     
 except KeyboardInterrupt:
     pass
     
