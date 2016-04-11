@@ -24,7 +24,7 @@ try:
     while True:
         # Read RC timing using pin #12
         value = RCtime(12)
-        print value
+        print "%d" % value
 except KeyboardInterrupt:
     pass
     
