@@ -2,7 +2,9 @@
 # Must be used with GPIO 0.3.1a or later - earlier verions
 # are not fast enough!
  
-import RPi.GPIO as GPIO, time, os      
+import RPi.GPIO as GPIO, time, os    
+import datetime
+  
  
 DEBUG = 1
 GPIO.setmode(GPIO.BOARD)
@@ -17,13 +19,16 @@ def RCtime(RCpin):
     # This takes about 1 millisecond per loop cycle
     while (GPIO.input(RCpin) == GPIO.LOW):
         reading += 1
+        if (reading >= 1000000):
+            break
     return reading
  
 #loop until keyboard interrupt
 try:
     while True:
         # Read RC timing using pin #12
-        print(RCtime(12))
+        print("Light value: %d, at %s", RCtime(12), datetime.datetime.now())
+        time.sleep(5)
 except KeyboardInterrupt:
     pass
     
