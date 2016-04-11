@@ -9,7 +9,7 @@ import RPi.GPIO as GPIO, time, os
 DEBUG = 1
 GPIO.setmode(GPIO.BOARD)
  
-def RCtime (RCpin):
+def RCtime(RCpin):
         reading = 0
         GPIO.setup(RCpin, GPIO.OUT)
         GPIO.output(RCpin, GPIO.LOW)
@@ -21,14 +21,10 @@ def RCtime (RCpin):
                 reading += 1
         return reading
  
-def loop():
-        print RCtime(12)     # Read RC timing using pin #12
-        return
-
 #loop until keyboard interrupt
 try:
     while True:
-        loop()
+        print RCtime(12)     # Read RC timing using pin #12
 except KeyboardInterrupt:
     pass
     
