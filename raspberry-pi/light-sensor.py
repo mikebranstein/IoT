@@ -27,7 +27,7 @@ def RCtime(RCpin):
 try:
     while True:
         # Read RC timing using pin #12
-        print("Light value: %d, at %s" % (RCtime(12), datetime.datetime.now())
+        print("Light value: %d, at %s" % (RCtime(12), datetime.datetime.now()))
         time.sleep(5)
 except KeyboardInterrupt:
     pass
